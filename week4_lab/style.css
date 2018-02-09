@@ -1,7 +1,7 @@
 body {
     margin:0;
     color: teal;
-    font-family: : 'Roboto', sans-serif;
+    font-family: 'Roboto', sans-serif;
 }
 
 /************ HEADER *************/
@@ -31,7 +31,7 @@ h1 {
 }
 
 .list {
-    padding 10px;
+    padding: 10px;
     margin-bottom: 10px;
     background-color: #eeeeee;
     border: 1px solid #cccccc;
