@@ -78,6 +78,7 @@ https://stackoverflow.com/questions/14562457/center-oversized-image-in-div
     width: 100%;
     margin: 10px auto;
     background: white;
+    z-index: 0;
 }
 
 #banner {
@@ -85,12 +86,14 @@ https://stackoverflow.com/questions/14562457/center-oversized-image-in-div
     height: 200px;
     width: 3550px;
     margin-bottom: 80px;
-    
+    z-index: 0;
 }
 
 #banner img {
     height: 500px;
     width: auto;
+    z-index: -1;
+
 }
 
 #left-pillow {
@@ -104,6 +107,7 @@ https://stackoverflow.com/questions/14562457/center-oversized-image-in-div
     position: absolute;
     margin-left: 50%;
     transform: translateX(75.7%);
+    
 
 }
 
@@ -143,10 +147,34 @@ https://stackoverflow.com/questions/14562457/center-oversized-image-in-div
     color: rgba(250,250,250, 1);
 }
 
+.circle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-left: -5px; /* margin is -0.5 * dimension */
+    margin-top: 100px;
+
+    width: 10px;
+    height: 10px;
+    background-color: white;
+    opacity: 75%;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+/* Cleaner, but slightly less support: use "50%" as value */
+}
+
+#left-circle {
+    left: 45%;
+}
+
+#right-circle {
+    left: 55%;
+}
+
 /* References the following link 
 https://stackoverflow.com/questions/10707253/css-full-screen-div-with-text-in-the-middle
 */
-
 .center {
     position: absolute;
     width: 300px;
@@ -156,21 +184,3 @@ https://stackoverflow.com/questions/10707253/css-full-screen-div-with-text-in-th
     margin-left: -150px; /* margin is -0.5 * dimension */
     margin-top: -50px;
 }​
-
-/* From the following link 
-https://css-tricks.com/examples/ShapesOfCSS/
-*/
-
-.circle {
-    height: 1000px;
-    width: 100px;
-    background-color: black;
-}
-
-
-
-
-
-
-
-
