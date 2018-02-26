@@ -1,6 +1,6 @@
 body {
     margin: 0;
-    background-color: #fffdf4;
+    background-color: #fcf7f2;
     font-family: 'Roboto', sans-serif;
 }
 
@@ -9,7 +9,6 @@ body {
 header {
     font-family: 'Roboto', sans-serif;
     text-align: center;
-    background-color: white;
     height: 120px;
 }
 
@@ -24,12 +23,10 @@ header {
     letter-spacing: 5px;
 }
 
-/*********** BANNER ************/
-
 nav {
     padding-top: 25px;
-    padding-left: 300px;
-    text-align: left;
+    text-align: right;
+    padding-right: 150px;
 }
 
 nav a {
@@ -54,8 +51,9 @@ nav a {
 
 #logo {
     position: absolute;
-    left: 0px;
-    width: 300px;
+    left: 40px;
+    top: 35px;
+    width: 250px;
     height: auto;
 
 }
@@ -67,3 +65,62 @@ nav a {
     padding-left: 40px;
     padding-top: 3px;
 }
+
+/*********** BANNER ************/
+
+/* Referenced the following link to center banner image
+https://stackoverflow.com/questions/14562457/center-oversized-image-in-div
+*/
+
+#photo-container {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    margin: 10px auto;
+    background: white;
+}
+
+#banner {
+
+    height: 233px;
+    width: 3550px;
+    margin-bottom: 80px;
+    
+}
+
+#banner img {
+    height: 500px;
+    width: auto;
+}
+
+#left-pillow {
+    position: absolute;
+    margin-left: 50%;
+    transform: translateX(-165%);
+
+}
+
+#right-pillow {
+    position: absolute;
+    margin-left: 50%;
+    transform: translateX(75.7%);
+
+}
+
+#home-pillow {
+    position: absolute;
+    top: -100%;
+    bottom: -100%;
+    left: -100%;
+    right: -100%;
+    margin: auto;
+
+}
+
+
+
+
+
+
+
+
