@@ -147,6 +147,11 @@ https://stackoverflow.com/questions/14562457/center-oversized-image-in-div
     color: rgba(250,250,250, 1);
 }
 
+#shop-now a {
+    color: white;
+    text-decoration: none;
+}
+
 .circle {
     position: absolute;
     top: 50%;
