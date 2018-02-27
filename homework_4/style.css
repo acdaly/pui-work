@@ -215,14 +215,12 @@ https://stackoverflow.com/questions/14562457/center-oversized-image-in-div
     overflow: hidden;
     width: 100%;
     margin: 10px auto;
-    width: 100%;
 }
 
 #image-right {
     overflow: hidden;
     width: 100%;
     margin: 10px auto;
-    width: 100%;
 }
 
 #image-links img {
@@ -383,19 +381,35 @@ footer address {
     position: relative;
 }
 
-#image-left {
-    overflow: hidden;
-    width: 100%;
-    margin: 10px auto;
-    width: 100%;
+.product-link {
+    object-fit: contain;
+    height: 100%;
 }
 
-#image-right {
+#bed-pillow {
     overflow: hidden;
     width: 100%;
     margin: 10px auto;
-    width: 100%;
 }
+
+#couch-pillow {
+    overflow: hidden;
+    width: 100%;
+    margin: 10px auto;
+}
+
+#floor-pouf {
+    overflow: hidden;
+    width: 100%;
+    margin: 10px auto;
+}
+
+#round-pillow {
+    overflow: hidden;
+    width: 100%;
+    margin: 10px auto;
+}
+
 
 .center { 
     position: absolute;
