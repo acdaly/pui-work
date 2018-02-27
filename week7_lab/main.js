@@ -2,21 +2,21 @@ function Elephant(name, age) {
     this.name = name;
     this.age = age;
     this.type = "Elephant"
-    this.image = "elephant.jpg"
+    this.image = "images/elephant.jpg"
 }
 
 function Snake(name, age) {
     this.name = name;
     this.age = age;
     this.type = "Snake"
-    this.image = "snake.jpg"
+    this.image = "images/snake.jpg"
 }
 
 function Starfish(name, age) {
     this.name = name;
     this.age = age;
     this.type = "Starfish"
-    this.image = "starfish.jpg"
+    this.image = "images/starfish.jpg"
 }
 
 var animals = [new Elephant(), new Snake(), new Starfish()];
@@ -55,5 +55,7 @@ function generateRandomAnimal() {
 
 $(document).ready(function() {
       var animal = generateRandomAnimal();
-      
-    }
+      $("#animal-image").attr('src', animal.image);
+      $("#animal-name").text(animal.name);
+      $("#animal-age").text(animal.age);
+    });
