@@ -328,6 +328,44 @@ footer address {
 
 }
 
+/*********** PRODUCT PAGE ************/
+
+#underline-header{
+    width: 100%;
+    margin-left: -50%;
+    top: 175px;
+    height: 1px;
+    background-color: black;
+    opacity: .2;
+}
+
+#product-header {
+    width: 800px;
+    margin-left: -400px;
+    top: 215px;
+    font-style: bold;
+    font-size: 1.2em;
+    letter-spacing: 3px;
+    text-align: center;
+}
+
+#product-underline{
+    width: 60%;
+    margin-left: -30%;
+    top: 255px;
+    height: 1px;
+    background-color: black;
+}
+
+#product-statement {
+    width: 400px;
+    margin-left: -200px;
+    top: 280px;
+    font-size: 1em;
+    letter-spacing: 4px;
+    text-align: center;
+}
+
 .center { 
     position: absolute;
     width: 300px;
