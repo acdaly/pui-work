@@ -366,6 +366,37 @@ footer address {
     text-align: center;
 }
 
+/*********** PRODUCT IMAGES ************/
+
+#product-links {
+    display: grid;
+    grid-template-columns: 175px 175px 175px 175px;
+    grid-template-rows: repeat(1, 300px);
+    grid-gap: 30px;
+    margin-top: 190px;
+    grid-auto-rows: 100px;
+    justify-items: center;
+    justify-content: center;
+    align-items: stretch;
+    align-content: center;
+    overflow: hidden;
+    position: relative;
+}
+
+#image-left {
+    overflow: hidden;
+    width: 100%;
+    margin: 10px auto;
+    width: 100%;
+}
+
+#image-right {
+    overflow: hidden;
+    width: 100%;
+    margin: 10px auto;
+    width: 100%;
+}
+
 .center { 
     position: absolute;
     width: 300px;
