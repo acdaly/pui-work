@@ -19,9 +19,7 @@ function Starfish(name, age) {
     this.image = "images/starfish.jpg"
 }
 
-var animals = [new Elephant(), new Snake(), new Starfish()];
 
-var animalNames = ["Harold", "Rob", "Squak", "Sandy", "Foo"];
 
 function generateRandomIndex(maxIndex) {
     return(Math.floor(Math.random() * maxIndex));
@@ -38,8 +36,8 @@ function generateRandomAge() {
 }
 
 function generateRandomAnimal() {
-    var randomIndex = generateRandomIndex(animals.length)
-    var randomAnimal = animals[randomIndex];
+    var randomIndex = generateRandomIndex(animalTypes.length)
+    var randomAnimal = animalTypes[randomIndex];
     var randomName = generateRandomName();
     var randomAge = generateRandomAge();
     if (randomAnimal instanceof Elephant){
@@ -62,22 +60,37 @@ function checkForSavedAnimals() {
         return true
     }
 }
+var animalTypes = [new Elephant(), new Snake(), new Starfish()];
+
+var animalNames = ["Harold", "Rob", "Squak", "Sandy", "Foo"];
 var animal;
+var animals = []
+var animalNumber = 2;
 function handleClick() {
     if (checkForSavedAnimals() === true) {
+    //save animal
         localStorage.clear();
         animal = generateRandomAnimal();
         $("#animal-image").attr('src', animal.image);
         $("#animal-name").text(animal.name);
         $("#animal-age").text(animal.age);
         $("#save-button").text("Save");
+        animals += animal;
     }
     else {
-        
+    //clear animal
         saveZooAnimal(animal);
         $("#save-button").text("Clear");
     }
 }
+
+/*
+function hideExtraAnimals(){
+    for (i=0, i < animalNumber, i++) {
+        if ( $("#animal-name").text(animal.name);)
+    }
+}
+*/
 
 $(document).ready(function() {
     if (checkForSavedAnimals() === true) {

@@ -2,3 +2,7 @@ button {
     height: 100px;
     width: 100px;
 }
+
+#animal-image {
+    height:300px;
+}
