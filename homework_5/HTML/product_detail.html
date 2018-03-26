@@ -6,6 +6,9 @@
     <link rel="stylesheet" type="text/css" href="../CSS/style.css" />
     <!-- fonts -->
     <link href="https://fonts.googleapis.com/css?family=Roboto|Roboto+Slab" rel="stylesheet" />
+    <!-- javascript -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="../main.js" type="text/javascript"></script>
 
 </head>
 
@@ -35,38 +38,38 @@
         <div id="price"> $85.00 </div>
         <div class="shapes-color-text"> SHAPES </div>
         <div id="shapes-grid">
-            <div id="square" class="shape-item">
+            <div id="square" class="shape-item" onclick="handleShapeClick(this.id)">
                 <img src="../images/square.png"/>
                 <div>$85</div>
             </div>
-            <div id="round" class="shape-item">
+            <div id="round" class="shape-item" onclick="handleShapeClick(this.id)">
                 <img src="../images/circle.png"/>
                 <div>$85</div>
             </div>
-            <div id="dog" class="shape-item">
+            <div id="dog" class="shape-item" onclick="handleShapeClick(this.id)">
                 <img src="../images/dog.png"/>
                 <div>$135</div>
             </div>
-            <div id="cat" class="shape-item">
+            <div id="cat" class="shape-item" onclick="handleShapeClick(this.id)">
                 <img src="../images/cat.png"/>
                 <div>$135</div>
             </div>
-            <div id="bunny" class="shape-item">
+            <div id="bunny" class="shape-item" onclick="handleShapeClick(this.id)">
                 <img src="../images/bunny.png"/>
                 <div>$165</div>
             </div>
         </div>
         <div class="shapes-color-text"> COLOR </div>
         <div id="colors-grid">
-            <div id="black" class="color-item">
+            <div id="black" class="outlineClass"  onclick="handleColorClick(this.id)">
             </div>
-            <div id="white" class="color-item">
+            <div id="white" class="color-item" onclick="handleColorClick(this.id)">
             </div>
-            <div id="red" class="color-item">
+            <div id="red" class="color-item" onclick="handleColorClick(this.id)">
             </div>
-            <div id="purple" class="color-item">
+            <div id="purple" class="color-item" onclick="handleColorClick(this.id)">
             </div>
-            <div id="blue" class="color-item">
+            <div id="blue" class="color-item" onclick="handleColorClick(this.id)">
             </div>
         </div>
 
