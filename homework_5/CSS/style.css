@@ -279,6 +279,10 @@ https://stackoverflow.com/questions/14562457/center-oversized-image-in-div
     border: 2px solid rgb(56, 54, 45);
     float: left;
 }
+
+.spacer {
+    height: 95px;
+}
 /*********** FOOTER ************/
 
 footer {
@@ -286,7 +290,7 @@ footer {
     grid-template-columns: 50% 50%;
     grid-template-rows: repeat(2, 30px);
     grid-gap: 0px;
-    margin-top: 95px;
+    margin-top: 0px;
     grid-auto-rows: 10px;
     justify-content: center;
 
@@ -547,6 +551,11 @@ input {
     color: white;
     font-size: 1em;
     letter-spacing: 2px;
+    
+}
+
+a {
+    text-decoration: none;
 }
 
 #detail-title {
