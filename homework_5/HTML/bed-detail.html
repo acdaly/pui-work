@@ -25,7 +25,7 @@
                 <a class="navigation" href="product.html"> PRODUCTS </a>
                 <a class="navigation"> OUR STORY </a>
                 <a class="navigation"> VISIT US </a>
-                <img id="cart" src="../images/cart.png"> </img>
+                <a href= "cart.html"><img id="cart" src="../images/cart.png"> </img></a>
             </nav>
         </header>
     </div>
@@ -73,8 +73,8 @@
             </div>
         </div>
 
-        <input type="number" min=1 max=10/>
-        <a href="cart.html"><div id="add-to-cart">ADD TO CART </div></a>
+        <input id="input-quantity" type="number" min=1 max=10 value="1" onclick='handleQuantityClick()'/>
+        <a href="cart.html"><div id="add-to-cart" onclick="handleAddToCart()">ADD TO CART </div></a>
         
     </div>
     <div id="detail-title"> DETAILS</div>
