@@ -1,5 +1,5 @@
 #cart-body{
-    height: 500px;
+    height: auto;
     background-color: white;
     border: 3px solid rgba(56, 54, 45, .8);
 
@@ -92,6 +92,7 @@
     grid-template-columns: 40% 40%;
     grid-column-gap: 50px;
     padding-left: 10%;
+    margin-bottom: 50px;
 
 }
 
@@ -116,5 +117,6 @@
     border: 2px solid rgb(150, 150, 150);
     text-transform: uppercase;
     font-size: .9em;
+
 } 
 
