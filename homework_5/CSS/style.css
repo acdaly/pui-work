@@ -58,6 +58,11 @@ nav a {
 
 }
 
+.itemCount {
+
+   padding-left: 80px;
+}
+
 #cart {
     width: 30px;
     height: auto;

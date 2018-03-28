@@ -13,10 +13,33 @@ var selectedColor = "black";
 var selectedQuantity = 1;
 var pillows = [];
 
+function navLoad(){
+    pillows = JSON.parse(localStorage.getItem('savedPillows'));
+    $('.itemCount').text('('+pillows.length+')');
+}
+
 function handleShapeClick(clickedID) {
     $('#'+selectedShape).css('background-color', 'white');
     $('#'+clickedID).css('background-color', 'lightgray');
     selectedShape = clickedID;
+    var shapePrice = 0;
+    if (selectedShape == "square") {
+        shapePrice = 85;
+    }
+    else if (selectedShape == "round") {
+        shapePrice = 85;
+    }
+    else if (selectedShape == "dog") {
+        shapePrice = 135;
+    }
+    else if (selectedShape == "cat") {
+        shapePrice = 135;
+    }
+    else if (selectedShape == "bunny") {
+        shapePrice = 165;
+    }
+    $('#price').text('$' + shapePrice + '.00');
+    
 
 
 }
@@ -26,6 +49,21 @@ function handleColorClick(clickedID) {
     $('#'+clickedID).addClass('outlineClass');
     selectedColor = clickedID;
     selectedColor = clickedID;
+    if (selectedColor == "black") {
+        $('#bed-detail-img').attr('src', "../images/red3.jpg");
+    }
+    else if (selectedColor == "white") {
+        $('#bed-detail-img').attr('src', "../images/red3.jpg");
+    }
+    else if (selectedColor == "red") {
+        $('#bed-detail-img').attr('src', "../images/red3.jpg");
+    }
+    else if (selectedColor == "purple") {
+        $('#bed-detail-img').attr('src', "../images/red3.jpg");
+    }
+    else if (selectedColor == "blue") {
+        $('#bed-detail-img').attr('src', "../images/red3.jpg");
+    }
 }
 
 function handleQuantityClick(clickedID) {
@@ -70,10 +108,8 @@ function handleAddToCart(){
     
 }
 
-function addItemToCart(){
-    pillows = JSON.parse(localStorage.getItem('savedPillows'));
-    for (i = 0; i < pillows.length; i++){
-        $('#new-item').append('\
+function appendItemHTML() {
+    $('#new-item').append('\
             <div class="cart-underline"></div>\
                 <img src="../images/black-1.jpg">\
                 <div class="text-grid">\
@@ -93,38 +129,50 @@ function addItemToCart(){
                     </div>\
                     <div id="delete-item" class="delete">Delete</div>\
                 </div>');
-        var newID = 'new-item' + i;
-        var newDeleteID = '#delete-item' +i;
-        $('#new-item').attr('id', newID);
-       console.log(newID);
-        $('#delete-item').attr('id', 'delete-item' + i);
-        $(newDeleteID).on('click', function() {
-            var id = this.id;
-            
-            id = id.slice(-1);
-            console.log(id);
-            pillows.splice(id, 1);
-            localStorage.setItem('savedPillows', JSON.stringify(pillows));
-            $('#new-item' + id).remove();
-        });
+}
 
+function correctItemIDs(i){
+    var newID = 'new-item' + i;
+    var newDeleteID = '#delete-item' + i;
+    $('#new-item').attr('id', newID);
+    $('#delete-item').attr('id', 'delete-item' + i);
+}
+
+function addClickFunction(i) {
+    var newDeleteID = '#delete-item' + i;
+    $(newDeleteID).on('click', function() {
+        var id = this.id;
+        id = id.slice(-1);
+        console.log(id);
+        pillows.splice(id, 1);
+        localStorage.setItem('savedPillows', JSON.stringify(pillows));
+        $('#new-item' + id).remove();
+    });
+}
+
+function addItemData(i){
+    var newID = 'new-item' + i;
         $('#items-container').append('<div id="new-item" class="cart-item"></div>');
         $("#" + newID + " .product-name").append(' ' + pillows[i].name);
         $("#" + newID + " .product-shape").append(' ' + pillows[i].shape);
         $("#" + newID + " .product-color").append(' ' + pillows[i].color);
         $("#" + newID + " .item-quantity").append(' ' + pillows[i].quantity);
-        $("#" + newID + " .item-price").append(' ' + pillows[i].price + '.00');
+        $("#" + newID + " .item-price").append(' ' + (pillows[i].price*pillows[i].quantity) + '.00');
         if (pillows[i].color == "red") {
-            $('#' + newID + ' img').attr('src', "../images/red3.jpg")
+            $('#' + newID + ' img').attr('src', "../images/red3.jpg");
         }
-    }
-
 }
 
-function handleDelete(ID){
-    
-    // var itemID = ID;
-    // var itemIndex = itemID.slice(-1);
-    //pillows.pop(itemIndex);
-    //$(ID).remove();
+function addItemToCart(){
+    pillows = JSON.parse(localStorage.getItem('savedPillows'));
+    var subtotal = 0;
+    for (i = 0; i < pillows.length; i++){
+        appendItemHTML();
+        correctItemIDs(i);
+        addClickFunction(i);
+        addItemData(i);
+        subtotal += (pillows[i].price*pillows[i].quantity);
+    }
+    $('#subtotal-price').append(subtotal + '.00');
+
 }

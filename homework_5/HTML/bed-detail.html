@@ -12,7 +12,7 @@
 
 </head>
 
-<body>
+<body onload="navLoad()">
 
     <div id="container">
         <header>
@@ -26,6 +26,7 @@
                 <a class="navigation"> OUR STORY </a>
                 <a class="navigation"> VISIT US </a>
                 <a href= "cart.html"><img id="cart" src="../images/cart.png"> </img></a>
+                <div class="navigation itemCount" >(3)</div>
             </nav>
         </header>
     </div>
@@ -74,7 +75,7 @@
         </div>
 
         <input id="input-quantity" type="number" min=1 max=10 value="1" onclick='handleQuantityClick()'/>
-        <a ><div id="add-to-cart" onclick="handleAddToCart()">ADD TO CART </div></a>
+        <a href = 'cart.html'><div id="add-to-cart" onclick="handleAddToCart()">ADD TO CART </div></a>
         
     </div>
     <div id="detail-title"> DETAILS</div>

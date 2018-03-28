@@ -14,7 +14,7 @@
 
 </head>
 
-<body onload='addItemToCart();'>
+<body onload='addItemToCart(); navLoad();'>
 
     <div id="container">
         <header>
@@ -28,6 +28,7 @@
                 <a class="navigation"> OUR STORY </a>
                 <a class="navigation"> VISIT US </a>
                 <img id="cart" src="../images/cart.png"> </img>
+                <div class="navigation itemCount" ></div>
             </nav>
         </header>
     </div>
@@ -35,7 +36,7 @@
     <div id ="cart-body">
         
         <div id="cart-content" class="cart-center">
-
+            <a href="bed-detail.html"> <div id="back">Back</div></a>
             <h1 id="cart-title"> CART </h1>
             <div id="items-container">
                 <div id="new-item" class="cart-item">
@@ -68,11 +69,11 @@
             <div id="subtotal">
                 <div id="subtotal-title">Subtotal</div>
                 <div id="subtotal-price">
-                    $0.00
+                    $
                 </div>
             </div>
             <div id="cart-buttons" class="cart-center">
-                <div id="continue-shopping">Continue Shopping</div>
+                <a href="product.html"><div id="continue-shopping">Continue Shopping</div></a>
                 <div id="checkout">Checkout</div>
             </div>
         </div>

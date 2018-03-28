@@ -6,10 +6,12 @@
     <link rel="stylesheet" type="text/css" href="../CSS/style.css" />
     <!-- fonts -->
     <link href="https://fonts.googleapis.com/css?family=Roboto|Roboto+Slab" rel="stylesheet" />
-
+    <!-- javascript -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="../main.js" type="text/javascript"></script>
 </head>
 
-<body>
+<body onload='navLoad();'>
 
     <div id="container">
         <header>
@@ -23,6 +25,7 @@
                 <a class="navigation"> OUR STORY </a>
                 <a class="navigation"> VISIT US </a>
                 <a href= "cart.html"><img id="cart" src="../images/cart.png"> </img></a>
+                <div class="navigation itemCount" >(3)</div>
             </nav>
         </header>
     </div>
