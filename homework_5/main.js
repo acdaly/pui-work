@@ -79,24 +79,52 @@ function addItemToCart(){
                 <div class="text-grid">\
                     <div class="product">\
                         <div class="product-title">Product</div>\
-                        <div class="product-name">Pillow</div>\
+                        <div class="product-name"></div>\
                         <div class="product-shape">Shape:</div>\
                         <div class="product-color">Color:</div>\
                     </div>\
                     <div class="quantity">\
                         <div class="quantity-title">Quantity</div>\
-                        <div class="item-quantity">0</div>\
+                        <div class="item-quantity"></div>\
                     </div>\
                     <div class="price">\
                         <div class="price-title">Price</div>\
-                        <div class="item-price">$0.00</div>\
+                        <div class="item-price">$</div>\
                     </div>\
-                    <div class="delete">Delete</div>\
+                    <div id="delete-item" class="delete">Delete</div>\
                 </div>');
         var newID = 'new-item' + i;
+        var newDeleteID = '#delete-item' +i;
         $('#new-item').attr('id', newID);
-        $('#' + newID).append('<div id="new-item"></div>');
-        console.log(newID);
+       console.log(newID);
+        $('#delete-item').attr('id', 'delete-item' + i);
+        $(newDeleteID).on('click', function() {
+            var id = this.id;
+            
+            id = id.slice(-1);
+            console.log(id);
+            pillows.splice(id, 1);
+            localStorage.setItem('savedPillows', JSON.stringify(pillows));
+            $('#new-item' + id).remove();
+        });
+
+        $('#items-container').append('<div id="new-item" class="cart-item"></div>');
+        $("#" + newID + " .product-name").append(' ' + pillows[i].name);
+        $("#" + newID + " .product-shape").append(' ' + pillows[i].shape);
+        $("#" + newID + " .product-color").append(' ' + pillows[i].color);
+        $("#" + newID + " .item-quantity").append(' ' + pillows[i].quantity);
+        $("#" + newID + " .item-price").append(' ' + pillows[i].price + '.00');
+        if (pillows[i].color == "red") {
+            $('#' + newID + ' img').attr('src', "../images/red3.jpg")
+        }
     }
 
+}
+
+function handleDelete(ID){
+    
+    // var itemID = ID;
+    // var itemIndex = itemID.slice(-1);
+    //pillows.pop(itemIndex);
+    //$(ID).remove();
 }
