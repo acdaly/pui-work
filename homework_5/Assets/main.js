@@ -161,19 +161,19 @@ function addItemData(i){
     $("#" + newID + " .item-price").append(' ' + (pillows[i].price*pillows[i].quantity) + '.00');
     
     if (pillows[i].color == "black") {
-    $('#' + newID + ' img').attr('src', "../Assets/images/bed-pillow-image.jpg");
+    $('#' + newID + ' img').attr('src', "../images/bed-pillow-image.jpg");
     }
     else if (pillows[i].color == "white") {
-        $('#' + newID + ' img').attr('src', "../Assets/images/white.jpg");
+        $('#' + newID + ' img').attr('src', "../images/white.jpg");
     }
     else if (pillows[i].color == "red") {
-        $('#' + newID + ' img').attr('src', "../Assets/images/red3.jpg");
+        $('#' + newID + ' img').attr('src', "../images/red3.jpg");
     }
     else if (pillows[i].color == "purple") {
-        $('#' + newID + ' img').attr('src', "../Assets/images/purple.jpg");
+        $('#' + newID + ' img').attr('src', "../images/purple.jpg");
     }
     else if (pillows[i].color == "blue") {
-        $('#' + newID + ' img').attr('src', "../Assets/images/blue.jpg");
+        $('#' + newID + ' img').attr('src', "../images/blue.jpg");
     }
 }
 
