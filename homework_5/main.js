@@ -50,19 +50,19 @@ function handleColorClick(clickedID) {
     selectedColor = clickedID;
     selectedColor = clickedID;
     if (selectedColor == "black") {
-        $('#bed-detail-img').attr('src', "../images/red3.jpg");
+        $('#bed-detail-img').attr('src', "../images/bed-pillow-image.jpg");
     }
     else if (selectedColor == "white") {
-        $('#bed-detail-img').attr('src', "../images/red3.jpg");
+        $('#bed-detail-img').attr('src', "../images/white.jpg");
     }
     else if (selectedColor == "red") {
         $('#bed-detail-img').attr('src', "../images/red3.jpg");
     }
     else if (selectedColor == "purple") {
-        $('#bed-detail-img').attr('src', "../images/red3.jpg");
+        $('#bed-detail-img').attr('src', "../images/purple.jpg");
     }
     else if (selectedColor == "blue") {
-        $('#bed-detail-img').attr('src', "../images/red3.jpg");
+        $('#bed-detail-img').attr('src', "../images/blue.jpg");
     }
 }
 
@@ -147,20 +147,34 @@ function addClickFunction(i) {
         pillows.splice(id, 1);
         localStorage.setItem('savedPillows', JSON.stringify(pillows));
         $('#new-item' + id).remove();
+        $('.itemCount').text('('+pillows.length+')');
     });
 }
 
 function addItemData(i){
     var newID = 'new-item' + i;
-        $('#items-container').append('<div id="new-item" class="cart-item"></div>');
-        $("#" + newID + " .product-name").append(' ' + pillows[i].name);
-        $("#" + newID + " .product-shape").append(' ' + pillows[i].shape);
-        $("#" + newID + " .product-color").append(' ' + pillows[i].color);
-        $("#" + newID + " .item-quantity").append(' ' + pillows[i].quantity);
-        $("#" + newID + " .item-price").append(' ' + (pillows[i].price*pillows[i].quantity) + '.00');
-        if (pillows[i].color == "red") {
-            $('#' + newID + ' img').attr('src', "../images/red3.jpg");
-        }
+    $('#items-container').append('<div id="new-item" class="cart-item"></div>');
+    $("#" + newID + " .product-name").append(' ' + pillows[i].name);
+    $("#" + newID + " .product-shape").append(' ' + pillows[i].shape);
+    $("#" + newID + " .product-color").append(' ' + pillows[i].color);
+    $("#" + newID + " .item-quantity").append(' ' + pillows[i].quantity);
+    $("#" + newID + " .item-price").append(' ' + (pillows[i].price*pillows[i].quantity) + '.00');
+    
+    if (pillows[i].color == "black") {
+    $('#' + newID + ' img').attr('src', "../images/bed-pillow-image.jpg");
+    }
+    else if (pillows[i].color == "white") {
+        $('#' + newID + ' img').attr('src', "../images/white.jpg");
+    }
+    else if (pillows[i].color == "red") {
+        $('#' + newID + ' img').attr('src', "../images/red3.jpg");
+    }
+    else if (pillows[i].color == "purple") {
+        $('#' + newID + ' img').attr('src', "../images/purple.jpg");
+    }
+    else if (pillows[i].color == "blue") {
+        $('#' + newID + ' img').attr('src', "../images/blue.jpg");
+    }
 }
 
 function addItemToCart(){
