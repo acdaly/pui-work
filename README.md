@@ -2,4 +2,4 @@
 
 ## Project Links
 
-[Flip Stitch Pillow](pui-work/homework_5/)
+[Flip Stitch Pillow](homework_5/)
