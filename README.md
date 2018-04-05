@@ -1,4 +1,6 @@
-# Programmable User Interfaces
+# [Programmable User Interfaces](https://www.hcii.cmu.edu/courses/programming-usable-interfaces)
+
+A lecture course, that involves an intensive programming lab and design studio, that is intended for those who want to express their interactive ideas in working prototypes.
 
 ## Project Links
   
