@@ -14,15 +14,27 @@ $( document ).ready(function() {
     $(".portfolio-img img").hover(function(){
     //references https://stackoverflow.com/questions/14616818/how-to-use-stop-properly-in-jquery-animation-with-hover-event
         $(this).stop(true).fadeTo(200, 0);
-        //$(this).parent('h2').stop(true).fadeTo(200, 1);
-        console.log($(this).parent().children('h2'));
         $(this).parent().children('h2').fadeTo(200, 1);
     },
         function(){
             $(this).stop(true).fadeTo(200, 1);
-            //$(this).parent('h2').stop(true).fadeTo(200, 0);
             $(this).parent().children('h2').fadeTo(200, 0);
         });
+    $(".portfolio-img").click(function(){
+        console.log(this);
+        $('#Featured').stop(true).fadeTo(500, 0,
+            function(){
+                $('#Featured').remove();
+                $('#portfolio').append('\
+                    <div id="google-prototype">\
+                      <div class= "back">\
+                        < Back\
+                      </div>\
+                    </div>');
+            });
+        
+
+    });
 });
 
 

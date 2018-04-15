@@ -21,8 +21,8 @@
 
 #home-profile {
     padding-top: 50px;
-    padding-left: 80px;
-    padding-right: 80px;
+    padding-left: 10%;
+    padding-right: 10%;
     font-size: 1.2em;
     color: rgba(255, 255, 255, .8);
 }
