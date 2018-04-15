@@ -1,11 +1,14 @@
 #about{
     display: block;
     overflow: auto;
-    min-height: 100vh;
+    height:100vh - 50px;
+    min-height: 500px;
     background-color: white;
     padding-left: 0;
     padding-right: 0;
-    padding-bottom: 30px;
+    padding-bottom: 80px;
+    padding-top: 50px;
+    font-family: 'Josefin Sans', sans-serif;
 
 }
 
@@ -23,7 +26,11 @@
 #about-profile{
     margin-left: 50px;
     margin-right: 50px;
-    padding: 0;
+    padding-left: 0;
+    padding-right: 0;
+    font-family: 'Pontano Sans', sans-serif;
+
+
 }
 #about-img img{
     height: 300px;
@@ -37,5 +44,25 @@ h3{
 }
 
 #hobbies{
+    padding-top: 30px;
     text-align: center;
+
+}
+
+#hobby-content{
+    padding-top: 30px;
+    font-family: 'Pontano Sans', sans-serif;
+}
+
+#hobbies img{
+    height: 50px;
+}
+
+#hobbies h5 {
+    padding-top: 25px;
+    padding-bottom: 25px;
+    font-size: 1em;
+    font-weight: normal;
+    height: 20px;
+
 }

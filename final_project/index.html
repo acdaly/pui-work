@@ -7,6 +7,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Josefin+Sans:300" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Didact+Gothic" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Pontano+Sans" rel="stylesheet">
   <!--jQuery must also be linked for Bootstrap to function-->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <!-- This website uses Bootstrap JS and CSS through links to MaxCDN's CDN supported version-->
@@ -20,6 +22,7 @@
   <link href="Assets/CSS/home.css" rel="stylesheet">
   <link href="Assets/CSS/portfolio.css" rel="stylesheet">
   <link href="Assets/CSS/about.css" rel="stylesheet">
+  <link href="Assets/CSS/connect.css" rel="stylesheet">
 
 
 
@@ -91,7 +94,7 @@
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                   <a class="dropdown-item" href="#">Digital Fabrication</a>
-                  <a class="dropdown-item" href="#">Wood & Metal</a>
+                  <a class="dropdown-item" href="#">Wood &AMP; Metal</a>
                   
                 </div>
               </li>
@@ -109,7 +112,9 @@
             </ul>
             <ul class="nav navbar-nav ml-auto">
               <li class="nav-item">
-                <button id="portfolio-resume" class="btn btn-sm btn-outline-secondary" type="button">Resume</button>
+                <a href="Assets/images/AriResume.pdf">
+                  <button id="portfolio-resume" class="btn btn-sm btn-outline-secondary" type="button">Resume</button>
+                </a>
                 
               </li>
             </ul>
@@ -177,24 +182,59 @@
         </div>
         <div id="hobbies">
           <div class="row justify-content-center align-items-center">
-            <h3 class="col-md-5">Hobbies</h3>
+            <h3 class="col-md-5">Hobbies &AMP; Interests</h3>
           </div>
           <div id="hobby-content" class="row justify-content-center align-items-center">
             <div class="col-sm-2">
-              Ballroom Dance
+              <img src="Assets/images/about/hobby-1.jpg">
+              <h5>Ballroom Dance</h5>
             </div>
             <div class="col-sm-2">
-              Cooking
+              <img src="Assets/images/about/hobby-2.jpg">
+              <h5>Cooking</h5>
             </div>
             <div class="col-sm-2">
-              Sustainability
+              <img src="Assets/images/about/hobby-3.jpg">
+              <h5>Sustainability</h5>
             </div>
             <div class="col-sm-2">
-              Learning New Tools
+              <img src="Assets/images/about/hobby-4.jpg">
+              <h5>Learning New Tools</h5>
             </div>
           </div>
         </div>
 
+      </div>
+    </div>
+    <!--CONNECT-->
+    <div class="row">
+      <div id="connect" class="col-sm-12">
+        <div class="row">
+            <div class = "col-sm-12 spacer"></div>
+        </div>
+        <div class="row justify-content-center align-items-center">
+          <div class="col-md-4">
+            <h1 id="connect-title">CONNECT</h1>
+          </div>
+        </div>
+        <div id="connect-icons" class="row justify-content-center align-items-center">
+          <div class="col-sm-3">
+            <a href="https://www.linkedin.com/in/ariana-daly/">
+              <img src="Assets/images/connect/linkedin.png">
+            </a>
+          </div>
+          <div class="col-sm-3">
+            <a>
+              <img src="Assets/images/connect/email.png">
+            </a>
+          </div>
+          <div class="col-sm-3">
+            <a href="https://github.com/acdaly">
+              <img src="Assets/images/connect/github.png">
+            </a>
+          </div>
+        </div>
+      </div>
     </div>
 
   </div>
