@@ -1,0 +1,65 @@
+#portfolio{
+    height: 100vh;
+    background-color: white;
+    padding:0px;
+}
+
+#nav {
+    margin-top: 50px;
+    height: 50px;
+}
+
+#portfolio nav {
+    margin-top: 0px;
+}
+
+.navbar-nav button {
+    text-align: right;
+}
+
+.btn-outline-secondary {
+    color: black;
+    background-color: white;
+    border-color: #343a40; /*set the color you want here*/
+}
+.btn-outline-secondary:hover{
+    color: white;
+    background-color: #343a40;
+    border-color: white; /*set the color you want here*/
+}
+
+.portfolio-img {
+    
+    height: 220px;
+    padding: 0px;
+    overflow: hidden;
+
+}
+
+.portfolio-img img {
+    min-height: 220px;
+    width: 100%;
+
+}
+
+
+
+#portfolio .spacer {
+    height: 30px;
+}
+
+.portfolio-title{
+    /* references
+    https://stackoverflow.com/questions/42068785/center-align-position-absolute-object-horizontally */
+    opacity: 0;
+    position: absolute;
+    left: 50%;
+    top: 48%;
+    transform: translateX(-50%) translateY(-50%);
+    
+
+    
+
+
+
+}
