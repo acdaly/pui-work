@@ -18,3 +18,12 @@
 #connect-icons {
     padding-top: 100px;
 }
+
+#p5-sketch{
+    margin-left: -10;
+    padding: 0;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 300px;
+}
