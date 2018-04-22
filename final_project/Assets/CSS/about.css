@@ -1,7 +1,7 @@
 #about{
     display: block;
     overflow: auto;
-    height:100vh - 50px;
+    height:100vh;
     min-height: 500px;
     background-color: white;
     padding-left: 0;
@@ -26,7 +26,7 @@
 }
 
 #about-profile{
-    margin-left: 50px;
+    margin-left: 0px;
     margin-right: 50px;
     padding-left: 0;
     padding-right: 0;
@@ -46,7 +46,7 @@ h3{
 }
 
 #hobbies{
-    padding-top: 30px;
+    padding-top: 60px;
     text-align: center;
 
 }
