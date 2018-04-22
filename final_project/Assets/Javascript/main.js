@@ -3,28 +3,28 @@ var featured = '<div id="Featured">\
             <div class = "col-sm-12 spacer"></div>\
           </div>\
           <div class="row justify-content-center">\
-            <div id="featured-1" class = "col-md-5 portfolio-img">\
+            <div id="google-prototype" class = "col-md-5 portfolio-img">\
               <h2 class="portfolio-title">Google Light Prototype</h2>\
               <img id="1" src="Assets/images/featured/1.jpg">\
             </div>\
-            <div class = "col-md-5 portfolio-img">\
+            <div id="sandblox" class = "col-md-5 portfolio-img">\
               <h2 class="portfolio-title">Sandblox</h2>\
               <img src="Assets/images/featured/2.png">\
             </div>\
 \
-            <div class = "col-md-5 portfolio-img">\
+            <div id="led-controller" class = "col-md-5 portfolio-img">\
               <h2 class="portfolio-title">LED Controller</h2>\
               <img src="Assets/images/featured/3.jpg">\
             </div>\
-            <div class = "col-md-5 portfolio-img">\
+            <div id="entanglement" class = "col-md-5 portfolio-img">\
               <h2 class="portfolio-title">Entanglement</h2>\
               <img src="Assets/images/featured/4.jpg">\
             </div>\
-            <div class = "col-md-5 portfolio-img">\
+            <div id="surround-sounds" class = "col-md-5 portfolio-img">\
               <h2 class="portfolio-title">Surround Sounds</h2>\
               <img src="Assets/images/featured/5.jpg">\
             </div>\
-            <div class = "col-md-5 portfolio-img">\
+            <div id="dream" class = "col-md-5 portfolio-img">\
               <h2 class="portfolio-title">Dream</h2>\
               <img src="Assets/images/featured/6.jpg">\
             </div>\
@@ -43,7 +43,7 @@ function onPortfolioImgHover(){
 
 function onPortfolioImgClick(){ 
     $(".portfolio-img").click(function(){
-        console.log(this);
+        console.log(this.id);
         $('#Featured').stop(true).fadeTo(500, 0,
             function(){
                 $('#Featured').remove();
@@ -53,6 +53,9 @@ function onPortfolioImgClick(){
                         < Back\
                       </div>\
                     </div>');
+                if (this.id == 'google-prototype'){
+                    
+                }
                 $('.portfolio-subsection').delegate('.back', 'click', function(){
                     $(this).parent().remove();
                     $('#portfolio').append(featured);
@@ -61,8 +64,7 @@ function onPortfolioImgClick(){
                 });
             });
     });
-
-}
+};
 
 $( document ).ready(function() {
     $('.carousel').carousel({
@@ -74,11 +76,7 @@ $( document ).ready(function() {
     $( this ).addClass( 'active' );
     });
     onPortfolioImgClick();
-    onPortfolioImgHover();
-
-
-    
-    
+    onPortfolioImgHover();   
  });
 
 
