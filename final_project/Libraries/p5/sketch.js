@@ -18,7 +18,6 @@ function setup() {
     skyColor = color('#121721');
     create2DNoiseList();
     background(skyColor);
-    console.log(curves +',' + t[0].length);
     
 }
 

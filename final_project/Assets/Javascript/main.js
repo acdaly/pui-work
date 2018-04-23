@@ -1,10 +1,10 @@
-var featured = '<div id="Featured">\
+var featured = '<div class="loaded-portfolio" id="Featured">\
           <div class="row">\
             <div class = "col-sm-12 spacer"></div>\
           </div>\
           <div class="row justify-content-center">\
             <div id="google-prototype" class = "col-md-5 portfolio-img">\
-              <h2 class="portfolio-title">Google Light Prototype</h2>\
+              <h2 class="portfolio-title">SQUAKe</h2>\
               <img id="1" src="Assets/images/featured/1.jpg">\
             </div>\
             <div id="sandblox" class = "col-md-5 portfolio-img">\
@@ -31,61 +31,58 @@ var featured = '<div id="Featured">\
           </div>\
         </div>';
 
-var googlePrototype = '\
-  <div id="google-detail">\
-    <div class="row">\
-      <div class = "col-sm-12 spacer"></div>\
-    </div>\
-    <div class="row justify-content-around align-items-center">\
-      <div id="google-carousel-container" class = "col-sm-5 spacer">\
-        <!-- Carousel\
-        copied from bootstrap documentation\
-          https://getbootstrap.com/docs/4.0/components/carousel/ -->\
-        <div id="google-carousel" class="carousel slide" data-ride="carousel">\
-          <ol class="carousel-indicators">\
-            <li data-target="#google-carousel" data-slide-to="0" class="active"></li>\
-            <li data-target="#google-carousel" data-slide-to="1"></li>\
-            <li data-target="#google-carousel" data-slide-to="2"></li>\
-          </ol>\
-          <div id="google-carousel-inner" class="carousel-inner">\
-            <div class="carousel-item active">\
-              <img class="d-block w-100" src="Assets/images/google-prototype/1.jpg" alt="First slide">\
-            </div>\
-            <div class="carousel-item">\
-              <img class="d-block w-100" src="Assets/images/google-prototype/2.png" alt="Second slide">\
-            </div>\
-            <div class="carousel-item">\
-              <img class="d-block w-100" src="Assets/images/google-prototype/3.jpg" alt="Third slide">\
-            </div>\
-          </div>\
-          <a class="carousel-control-prev" href="#google-carousel" role="button" data-slide="prev">\
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>\
-            <span class="sr-only">Previous</span>\
-          </a>\
-          <a class="carousel-control-next" href="#google-carousel" role="button" data-slide="next">\
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>\
-            <span class="sr-only">Next</span>\
-          </a>\
-        </div>\
-        <!-- End of Carousel -->\
-      </div>\
-      <div class = "col-sm-5">\
-        <p id="google-text">\
-          This prototype was made during an internship at Iontank, a specialized design studio that \
-          develops interactive art installations and software systems. The original design was created \
-          during the ideation stage for an installation with their client, Google, and is now a component of the in-progress project.<br>\
-          <br>\
-          The design was then iterated upon to create a standalone prototype.\
-          <br>\
-          <br>\
-        </p>\
-        <iframe src="https://player.vimeo.com/video/259328050" width="640" height="352" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>\
-      </div>\
-    </div>\
-  </div>';
+var coding = {
+    "projects": [
+        {
+            "name": "Google Light Prototype",
+            "img": "Assets/images/featured/1.jpg",
+            "id": "google-prototype",
+            "modalID": "#googleModal"
+        },
+        {
+            "name": "Sandblox",
+            "img": "Assets/images/featured/2.png",
+            "id": "sandblox",
+            "modalID": "#sandbloxModal"
+        },
+        {
+            "name": "LED Controller",
+            "img": "Assets/images/featured/3.jpg",
+            "id": "led-controller",
+            "modalID": "#ledModal"
+        },
+        {
+            "name": "Entanglement",
+            "img": "Assets/images/featured/4.jpg",
+            "id": "google-prototype",
+            "modalID": "#entanglementModal"
+        },
+        {
+            "name": "Surround Sounds",
+            "img": "Assets/images/featured/5.jpg",
+            "id": "surround-sounds",
+            "modalID": "#surroundModal"
+        },
+        {
+            "name": "Dream",
+            "img": "Assets/images/featured/6.jpg",
+            "id": "dream",
+            "modalID": "#dreamModal"
+        }
+    ]
+        
+}
 
-
-
+function fillPortfolioTemplate(){
+    //get HTML template using jQuery
+    var source = $("#portfolio-template").html();
+    //compile the template into a function
+    var template = Handlebars.compile(source);
+    //create new HTML using our data
+    var newHTML = template(coding);
+    //add the new HTML to the page
+    $("#portfolio-content").append(newHTML);
+}
 
 function onPortfolioImgHover(){   
     $(".portfolio-img").on('mouseenter', 'img', function(event){
@@ -96,41 +93,6 @@ function onPortfolioImgHover(){
             $(this).parent().children('h2').fadeTo(200, 0);
         });
 };
-
-// function onPortfolioImgClick(){ 
-//   $(".portfolio-img").click(function(){
-//     var loadID = this.id;
-//     $('#Featured').stop(true).fadeTo(500, 0,
-//         function(){
-//             $('#Featured').remove();
-//             $('#portfolio').append('\
-//                 <div class="portfolio-subsection">\
-//                   <div class= "back">\
-//                     < Back\
-//                   </div>\
-//                 </div>');
-//             if (loadID == 'google-prototype'){
-//               console.log("loading google");
-//               $('.portfolio-subsection').append(googlePrototype);
-//               $('.portfolio-subsection').css('opacity', 0);
-//               $('.portfolio-subsection').stop(true).fadeTo(300, 1.0, function(){
-//                 console.log("loading");
-//               });
-                
-//             }
-//             $('.portfolio-subsection').delegate('.back', 'click', function(){
-//               $('.portfolio-subsection').stop(true).fadeTo(500, 0.0, function(){
-//                 $('.portfolio-subsection').remove();
-//               });
-            
-//             $('#portfolio').append(featured);
-//             onPortfolioImgHover(); 
-//             onPortfolioImgClick();
-//             });
-//         });
-    
-//     });
-// };
 
 $.fn.isInViewport = function() {
 //Code copied from https://medium.com/talk-like/detecting-if-an-element-is-in-the-viewport-jquery-a6a4405a3ea2
@@ -160,90 +122,86 @@ $(window).on('resize', function(){
       else {$.fn.fullpage.setAutoScrolling(true);}
 });
 
+function sideDotScrolling(nextIndex){
+  for (i=0;i<=4;i++){
+    if (i==nextIndex){
+      dotInView(nextIndex);
+    }
+    else{
+      dotOutOfView(i);
+    }
+  }
+}
 
-
-$( document ).ready(function() {
+function windowSizeOptions(){
   var win = $(this);
   if (win.width() <= 770) {
     $('#fullpage').fullpage({
       autoScrolling: false,
       touchSensitivity: 10,
-      onLeave: function(index, nextIndex, direction){
-        var leavingSection = $(this);
-        console.log(nextIndex);
-        
-      }
+      onLeave: function(index, nextIndex, direction){sideDotScrolling(nextIndex);}
     });
   }
   else {$('#fullpage').fullpage({
     autoScrolling: true,
     touchSensitivity: 10,
-    onLeave: function(index, nextIndex, direction){
-        var leavingSection = $(this);
-        for (i=0;i<=4;i++){
-          if (i==nextIndex){
-            dotInView(nextIndex);
-          }
-          else{
-            dotOutOfView(i);
-          }
-          
-        
-        }
-        
-      }
+    onLeave: function(index, nextIndex, direction){sideDotScrolling(nextIndex);}
+    });
+  }
+}
 
+function navBarLoad(clickID){
+  $('#Featured').stop(true).fadeTo(500, 0,
+      function(){
+          $('#portfolio').children('.loaded-portfolio').remove();
+          if (clickID == 'd-fab'){
+            console.log("loading dfab");
+            $('#portfolio').append(featured);
+            $('.loaded-portfolio').css('opacity', 0);
+            $('.loaded-portfolio').stop(true).fadeTo(300, 1.0, function(){
+              console.log("loading");
+            });
+          }
+          onPortfolioImgHover(); 
+      });
+}
+
+function navBarConfiguration(){
+  $('#portfolio .nav-link' ).on( 'click', function () {
+    //references https://stackoverflow.com/questions/24514717/bootstrap-navbar-active-state-not-working
+      $(this).dropdown('toggle')
+      $('#portfolio .navbar').find( '.active' ).removeClass( 'active' );
+      $( this ).addClass( 'active' );
+      console.log("click");
+    });
+  $('#portfolio .dropdown-item' ).on( 'click', function () {
+    //references https://stackoverflow.com/questions/24514717/bootstrap-navbar-active-state-not-working
+    navBarLoad(this.id);
+    console.log(this.id);
   });
 }
-  
-  $(window).on('resize scroll', function() {
-    if ($('#home-background').isInViewport()) {
-      dotInView(1);
-      dotOutOfView(2);
-      dotOutOfView(3);
-      dotOutOfView(4);
-    } 
-    else if ($('#portfolio').isInViewport()) {
-      dotInView(2);
-      dotOutOfView(1);
-      dotOutOfView(3);
-      dotOutOfView(4);
-    } 
-    else if ($('#about').isInViewport()) {
-      dotInView(3);
-      dotOutOfView(1);
-      dotOutOfView(2);
-      dotOutOfView(4);
-    } 
-    else if ($('#connect').isInViewport()) {
-      dotInView(4);
-      dotOutOfView(1);
-      dotOutOfView(2);
-      dotOutOfView(3);
-    }
-    });
 
-    $('.carousel').carousel({
-      interval: 4000
-    });
-    $('#portfolio .nav-link' ).on( 'click', function () {
-    //references https://stackoverflow.com/questions/24514717/bootstrap-navbar-active-state-not-working
-    $('#portfolio .navbar').find( '.active' ).removeClass( 'active' );
-    $( this ).addClass( 'active' );
-    });
-    //onPortfolioImgClick();
-    onPortfolioImgHover();
-    $(".modal").on("hidden.bs.modal", function () {
+function modalFreezePageScrolling(){
+  $(".modal").on("hidden.bs.modal", function () {
       $.fn.fullpage.setAllowScrolling(true);
       $.fn.fullpage.setKeyboardScrolling(true);
-      console.log('allow!');
     });
 
     $(".modal").on("show.bs.modal", function () {
-      console.log("not allowed!");
       $.fn.fullpage.setAllowScrolling(false);
       $.fn.fullpage.setKeyboardScrolling(false);
-    });   
+    });
+}
+
+$( document ).ready(function() {
+
+    windowSizeOptions();
+    $('.carousel').carousel({interval: 4000});
+    navBarConfiguration();
+    modalFreezePageScrolling();
+    fillPortfolioTemplate();
+    onPortfolioImgHover();
+       
  });
 
 
