@@ -18,10 +18,6 @@
 }
 
 
-.dropdown:hover>.dropdown-menu {
-  display: block;
-}
-
 #portfolio nav {
     margin-top: 0px;
 }

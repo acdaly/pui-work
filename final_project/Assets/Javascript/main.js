@@ -1,37 +1,4 @@
-var featured = '<div class="loaded-portfolio" id="Featured">\
-          <div class="row">\
-            <div class = "col-sm-12 spacer"></div>\
-          </div>\
-          <div class="row justify-content-center">\
-            <div id="google-prototype" class = "col-md-5 portfolio-img">\
-              <h2 class="portfolio-title">SQUAKe</h2>\
-              <img id="1" src="Assets/images/featured/1.jpg">\
-            </div>\
-            <div id="sandblox" class = "col-md-5 portfolio-img">\
-              <h2 class="portfolio-title">Sandblox</h2>\
-              <img src="Assets/images/featured/2.png">\
-            </div>\
-\
-            <div id="led-controller" class = "col-md-5 portfolio-img">\
-              <h2 class="portfolio-title">LED Controller</h2>\
-              <img src="Assets/images/featured/3.jpg">\
-            </div>\
-            <div id="entanglement" class = "col-md-5 portfolio-img">\
-              <h2 class="portfolio-title">Entanglement</h2>\
-              <img src="Assets/images/featured/4.jpg">\
-            </div>\
-            <div id="surround-sounds" class = "col-md-5 portfolio-img">\
-              <h2 class="portfolio-title">Surround Sounds</h2>\
-              <img src="Assets/images/featured/5.jpg">\
-            </div>\
-            <div id="dream" class = "col-md-5 portfolio-img">\
-              <h2 class="portfolio-title">Dream</h2>\
-              <img src="Assets/images/featured/6.jpg">\
-            </div>\
-          </div>\
-        </div>';
-
-var coding = {
+var featured = {
     "projects": [
         {
             "name": "Google Light Prototype",
@@ -69,19 +36,194 @@ var coding = {
             "id": "dream",
             "modalID": "#dreamModal"
         }
-    ]
-        
+    ]     
 }
 
-function fillPortfolioTemplate(){
+var creativeFrameworks = {
+    "projects": [
+        {
+            "name": "Sandblox",
+            "img": "Assets/images/coding/sandblox.jpg",
+            "id": "sandblox",
+            "modalID": "#sandbloxModal"
+        },
+        {
+            "name": "Plotter Drawing",
+            "img": "Assets/images/coding/plotter.jpg",
+            "id": "plotter",
+            "modalID": "#plotterModal"
+        },
+        {
+            "name": "Fireflies",
+            "img": "Assets/images/coding/fireflies.jpg",
+            "id": "fireflies",
+            "modalID": "#firefliesModal"
+        },
+        {
+            "name": "Surround Sounds",
+            "img": "Assets/images/coding/surround-sounds.jpg",
+            "id": "surround-sounds",
+            "modalID": "#surroundModal"
+        },
+        {
+            "name": "P5 Experiments",
+            "img": "Assets/images/coding/p5-experiments.jpg",
+            "id": "p5-experiments",
+            "modalID": "#p5Modal"
+        }
+    ]     
+}
+
+var hardware = {
+    "projects": [
+        {
+            "name": "Google Light Prototype",
+            "img": "Assets/images/coding/google-prototype.jpg",
+            "id": "google-prototype",
+            "modalID": "#googleModal"
+        },
+        {
+            "name": "LED Controller",
+            "img": "Assets/images/coding/led-controller.jpg",
+            "id": "led-controller",
+            "modalID": "#ledModal"
+        },
+        {
+            "name": "Entanglement",
+            "img": "Assets/images/coding/entanglement.jpg",
+            "id": "google-prototype",
+            "modalID": "#entanglementModal"
+        },
+        {
+            "name": "Light Capsule",
+            "img": "Assets/images/coding/light-capsule.jpg",
+            "id": "light-capsule",
+            "modalID": "#capsuleModal"
+        }
+    ]     
+}
+
+var fabrication = {
+    "projects": [
+        {
+            "name": "Google Light Prototype",
+            "img": "Assets/images/fabrication/google-prototype.jpg",
+            "id": "google-prototype",
+            "modalID": "#googleModal"
+        },
+        {
+            "name": "Entanglement",
+            "img": "Assets/images/fabrication/entanglement.jpg",
+            "id": "entanglement",
+            "modalID": "#entanglementModal"
+        },
+        {
+            "name": "Holder & Coaster",
+            "img": "Assets/images/fabrication/holder.jpg",
+            "id": "holder-coaster",
+            "modalID": "#holderModal"
+        },
+        {
+            "name": "Within Our Reach",
+            "img": "Assets/images/fabrication/swing.jpg",
+            "id": "swing",
+            "modalID": "#swingModal"
+        },
+        {
+            "name": "Enclosed",
+            "img": "Assets/images/fabrication/enclosed.jpg",
+            "id": "enclosed",
+            "modalID": "#enclosedModal"
+        },
+        {
+            "name": "Memories",
+            "img": "Assets/images/fabrication/memories.jpg",
+            "id": "memories",
+            "modalID": "#memoriesModal"
+        }
+    ]     
+}
+
+var dFab = {
+    "projects": [
+        {
+            "name": "Google Light Prototype",
+            "img": "Assets/images/fabrication/google-prototype.jpg",
+            "id": "google-prototype",
+            "modalID": "#googleModal"
+        },
+        {
+            "name": "Entanglement",
+            "img": "Assets/images/fabrication/entanglement.jpg",
+            "id": "entanglement",
+            "modalID": "#entanglementModal"
+        },
+        {
+            "name": "Holder & Coaster",
+            "img": "Assets/images/fabrication/holder.jpg",
+            "id": "holder-coaster",
+            "modalID": "#holderModal"
+        },
+        {
+            "name": "Cast a Keychain",
+            "img": "Assets/images/fabrication/keychain.jpg",
+            "id": "swing",
+            "modalID": "#swingModal"
+        },
+        {
+            "name": "Eclipse",
+            "img": "Assets/images/fabrication/eclipse.jpg",
+            "id": "eclipse",
+            "modalID": "#eclipseModal"
+        }
+    ]     
+}
+
+var woodMetal = {
+    "projects": [
+        {
+            "name": "Within Our Reach",
+            "img": "Assets/images/fabrication/swing.jpg",
+            "id": "swing",
+            "modalID": "#swingModal"
+        },
+        {
+            "name": "Enclosed",
+            "img": "Assets/images/fabrication/enclosed.jpg",
+            "id": "enclosed",
+            "modalID": "#enclosedModal"
+        },
+        {
+            "name": "Memories",
+            "img": "Assets/images/fabrication/memories.jpg",
+            "id": "memories",
+            "modalID": "#memoriesModal"
+        },
+        {
+            "name": "Valetines",
+            "img": "Assets/images/fabrication/flower.jpg",
+            "id": "floweer",
+            "modalID": "#flowerModal"
+        },
+        {
+            "name": "Dead, Dying, Plant",
+            "img": "Assets/images/fabrication/plants.jpg",
+            "id": "plant",
+            "modalID": "#plantModal"
+        }
+    ]     
+}
+
+function fillPortfolioTemplate(category){
     //get HTML template using jQuery
     var source = $("#portfolio-template").html();
     //compile the template into a function
     var template = Handlebars.compile(source);
     //create new HTML using our data
-    var newHTML = template(coding);
+    var newHTML = template(category);
     //add the new HTML to the page
-    $("#portfolio-content").append(newHTML);
+    $("#portfolio").append(newHTML);
+
 }
 
 function onPortfolioImgHover(){   
@@ -151,33 +293,52 @@ function windowSizeOptions(){
 }
 
 function navBarLoad(clickID){
-  $('#Featured').stop(true).fadeTo(500, 0,
+  $('#portfolio-content').stop(true).fadeTo(500, 0,
       function(){
-          $('#portfolio').children('.loaded-portfolio').remove();
-          if (clickID == 'd-fab'){
-            console.log("loading dfab");
-            $('#portfolio').append(featured);
-            $('.loaded-portfolio').css('opacity', 0);
-            $('.loaded-portfolio').stop(true).fadeTo(300, 1.0, function(){
-              console.log("loading");
-            });
+          $('#portfolio').children('#portfolio-content').remove();
+          console.log(clickID);
+          if (clickID == 'fabrication'){
+            fillPortfolioTemplate(fabrication);
+            $('#portfolio-content').css('opacity', 0);
           }
+          else if (clickID == 'd-fab'){
+            fillPortfolioTemplate(dFab);
+            $('#portfolio-content').css('opacity', 0);
+          }
+          else if (clickID == 'wood-metal'){
+            fillPortfolioTemplate(woodMetal);
+            $('#portfolio-content').css('opacity', 0);
+          }
+          else if (clickID == 'featured'){
+            fillPortfolioTemplate(featured);
+            $('#portfolio-content').css('opacity', 0);
+          }
+          else if (clickID == 'hardware'){
+            fillPortfolioTemplate(hardware);
+            $('#portfolio-content').css('opacity', 0);
+          }
+          else if (clickID == 'creative-frameworks'){
+            fillPortfolioTemplate(creativeFrameworks);
+            $('#portfolio-content').css('opacity', 0);
+          }
+
+          $('#portfolio-content').stop(true).fadeTo(300, 1.0);
           onPortfolioImgHover(); 
+
+          
       });
 }
 
 function navBarConfiguration(){
   $('#portfolio .nav-link' ).on( 'click', function () {
     //references https://stackoverflow.com/questions/24514717/bootstrap-navbar-active-state-not-working
-      $(this).dropdown('toggle')
       $('#portfolio .navbar').find( '.active' ).removeClass( 'active' );
       $( this ).addClass( 'active' );
-      console.log("click");
+      if (this.id=="featured"){navBarLoad(this.id);}
     });
   $('#portfolio .dropdown-item' ).on( 'click', function () {
     //references https://stackoverflow.com/questions/24514717/bootstrap-navbar-active-state-not-working
     navBarLoad(this.id);
-    console.log(this.id);
   });
 }
 
@@ -194,12 +355,11 @@ function modalFreezePageScrolling(){
 }
 
 $( document ).ready(function() {
-
     windowSizeOptions();
     $('.carousel').carousel({interval: 4000});
     navBarConfiguration();
     modalFreezePageScrolling();
-    fillPortfolioTemplate();
+    fillPortfolioTemplate(featured);
     onPortfolioImgHover();
        
  });
