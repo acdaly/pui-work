@@ -84,6 +84,9 @@ var googlePrototype = '\
     </div>\
   </div>';
 
+
+
+
 function onPortfolioImgHover(){   
     $(".portfolio-img").on('mouseenter', 'img', function(event){
         $(this).fadeTo(200, 0);
@@ -229,7 +232,18 @@ $( document ).ready(function() {
     $( this ).addClass( 'active' );
     });
     //onPortfolioImgClick();
-    onPortfolioImgHover();   
+    onPortfolioImgHover();
+    $(".modal").on("hidden.bs.modal", function () {
+      $.fn.fullpage.setAllowScrolling(true);
+      $.fn.fullpage.setKeyboardScrolling(true);
+      console.log('allow!');
+    });
+
+    $(".modal").on("show.bs.modal", function () {
+      console.log("not allowed!");
+      $.fn.fullpage.setAllowScrolling(false);
+      $.fn.fullpage.setKeyboardScrolling(false);
+    });   
  });
 
 
