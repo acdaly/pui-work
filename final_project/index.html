@@ -38,6 +38,27 @@
 </head>
 <body>
 
+  <!-- Modal -->
+<div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
   <!-- SIDEBAR -->
   <div id="sidebar">
     <span id="dot1" class="dot"></span>
@@ -85,6 +106,7 @@
 
       <!--PORTFOLIO-->
       <div class="section" id="section1">
+
          <div class="row">
           <div id = "portfolio" class="col-sm-12">
             <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
@@ -146,9 +168,13 @@
                 <div class = "col-sm-12 spacer"></div>
               </div>
               <div class="row justify-content-center">
+                <!-- Button trigger modal -->
+      
                 <div id='google-prototype' class = "col-md-5 portfolio-img">
-                  <h2 class="portfolio-title">Google Light Prototype</h2>
-                  <img id="1" src="Assets/images/featured/1.jpg">
+                  <a data-toggle="modal" data-target="#exampleModalLong">
+                    <h2 class="portfolio-title">Google Light Prototype</h2>
+                    <img id="1" src="Assets/images/featured/1.jpg">
+                  </a>
                 </div>
                 <div id='sandblox' class = "col-md-5 portfolio-img">
                   <h2 class="portfolio-title">Sandblox</h2>
@@ -176,6 +202,8 @@
           </div>
         </div>
       </div>
+
+
 
       <!--ABOUT-->
       <div class="section">

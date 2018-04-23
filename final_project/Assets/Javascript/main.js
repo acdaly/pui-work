@@ -94,40 +94,40 @@ function onPortfolioImgHover(){
         });
 };
 
-function onPortfolioImgClick(){ 
-  $(".portfolio-img").click(function(){
-    var loadID = this.id;
-    $('#Featured').stop(true).fadeTo(500, 0,
-        function(){
-            $('#Featured').remove();
-            $('#portfolio').append('\
-                <div class="portfolio-subsection">\
-                  <div class= "back">\
-                    < Back\
-                  </div>\
-                </div>');
-            if (loadID == 'google-prototype'){
-              console.log("loading google");
-              $('.portfolio-subsection').append(googlePrototype);
-              $('.portfolio-subsection').css('opacity', 0);
-              $('.portfolio-subsection').stop(true).fadeTo(300, 1.0, function(){
-                console.log("loading");
-              });
+// function onPortfolioImgClick(){ 
+//   $(".portfolio-img").click(function(){
+//     var loadID = this.id;
+//     $('#Featured').stop(true).fadeTo(500, 0,
+//         function(){
+//             $('#Featured').remove();
+//             $('#portfolio').append('\
+//                 <div class="portfolio-subsection">\
+//                   <div class= "back">\
+//                     < Back\
+//                   </div>\
+//                 </div>');
+//             if (loadID == 'google-prototype'){
+//               console.log("loading google");
+//               $('.portfolio-subsection').append(googlePrototype);
+//               $('.portfolio-subsection').css('opacity', 0);
+//               $('.portfolio-subsection').stop(true).fadeTo(300, 1.0, function(){
+//                 console.log("loading");
+//               });
                 
-            }
-            $('.portfolio-subsection').delegate('.back', 'click', function(){
-              $('.portfolio-subsection').stop(true).fadeTo(500, 0.0, function(){
-                $('.portfolio-subsection').remove();
-              });
+//             }
+//             $('.portfolio-subsection').delegate('.back', 'click', function(){
+//               $('.portfolio-subsection').stop(true).fadeTo(500, 0.0, function(){
+//                 $('.portfolio-subsection').remove();
+//               });
             
-            $('#portfolio').append(featured);
-            onPortfolioImgHover(); 
-            onPortfolioImgClick();
-            });
-        });
+//             $('#portfolio').append(featured);
+//             onPortfolioImgHover(); 
+//             onPortfolioImgClick();
+//             });
+//         });
     
-    });
-};
+//     });
+// };
 
 $.fn.isInViewport = function() {
 //Code copied from https://medium.com/talk-like/detecting-if-an-element-is-in-the-viewport-jquery-a6a4405a3ea2
@@ -228,7 +228,7 @@ $( document ).ready(function() {
     $('#portfolio .navbar').find( '.active' ).removeClass( 'active' );
     $( this ).addClass( 'active' );
     });
-    onPortfolioImgClick();
+    //onPortfolioImgClick();
     onPortfolioImgHover();   
  });
 
