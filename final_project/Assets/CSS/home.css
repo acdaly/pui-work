@@ -22,10 +22,13 @@
 
 #home-profile {
     padding-top: 50px;
-    padding-left: 10%;
-    padding-right: 10%;
-    font-size: 1.2em;
-    color: rgba(255, 255, 255, .8);
+    padding-left: 12%;
+    padding-right: 12%;
+    font-size: 1.1em;
+    letter-spacing: .02em;
+    color: rgba(255, 255, 255, .6);
+    font-family: 'Lato', sans-serif;
+    font-weight: 300;
 }
 
 #home-image{

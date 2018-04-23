@@ -1,14 +1,15 @@
 #about{
     display: block;
-    overflow: auto;
     height:100vh;
     min-height: 500px;
+    overflow: auto;
     background-color: white;
     padding-left: 0;
     padding-right: 0;
     padding-bottom: 80px;
     padding-top: 50px;
-    font-family: 'Josefin Sans', sans-serif;
+    font-family: 'Lato', sans-serif;
+    font-weight: 300;
     overflow-x: hidden;
 
 
@@ -26,7 +27,7 @@
 }
 
 #about-profile{
-    margin-left: 0px;
+    margin-left: 50px;
     margin-right: 50px;
     padding-left: 0;
     padding-right: 0;

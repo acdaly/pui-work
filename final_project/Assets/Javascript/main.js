@@ -109,19 +109,115 @@ function onPortfolioImgClick(){
             if (loadID == 'google-prototype'){
               console.log("loading google");
               $('.portfolio-subsection').append(googlePrototype);
+              $('.portfolio-subsection').css('opacity', 0);
+              $('.portfolio-subsection').stop(true).fadeTo(300, 1.0, function(){
+                console.log("loading");
+              });
                 
             }
             $('.portfolio-subsection').delegate('.back', 'click', function(){
-                $(this).parent().remove();
-                $('#portfolio').append(featured);
-                onPortfolioImgHover(); 
-                onPortfolioImgClick();
+              $('.portfolio-subsection').stop(true).fadeTo(500, 0.0, function(){
+                $('.portfolio-subsection').remove();
+              });
+            
+            $('#portfolio').append(featured);
+            onPortfolioImgHover(); 
+            onPortfolioImgClick();
             });
         });
+    
     });
 };
 
+$.fn.isInViewport = function() {
+//Code copied from https://medium.com/talk-like/detecting-if-an-element-is-in-the-viewport-jquery-a6a4405a3ea2
+    var elementTop = $(this).offset().top;
+    var elementBottom = elementTop + $(this).outerHeight();
+
+    var viewportTop = $(window).scrollTop();
+    var viewportBottom = viewportTop + $(window).height();
+
+    return elementBottom > viewportTop && elementTop < viewportBottom;
+};
+
+function dotOutOfView(i){
+  $('#dot' + i).css('background-color', 'black');
+  $('#dot' + i).css('border-color', 'white');
+  $('#dot' + i).css('box-shadow', '0px 0px 0px 0px #121721');
+}
+
+function dotInView(i){
+  $('#dot' + i).css('background-color', 'white');
+  $('#dot' + i).css('box-shadow', '0px 0px 0px 2px #121721');
+}
+
+$(window).on('resize', function(){
+      var win = $(this);
+      if (win.width() <= 770) {$.fn.fullpage.setAutoScrolling(false);}
+      else {$.fn.fullpage.setAutoScrolling(true);}
+});
+
+
+
 $( document ).ready(function() {
+  var win = $(this);
+  if (win.width() <= 770) {
+    $('#fullpage').fullpage({
+      autoScrolling: false,
+      onLeave: function(index, nextIndex, direction){
+        var leavingSection = $(this);
+        console.log(nextIndex);
+        
+      }
+    });
+  }
+  else {$('#fullpage').fullpage({
+    autoScrolling: true,
+    onLeave: function(index, nextIndex, direction){
+        var leavingSection = $(this);
+        for (i=0;i<=4;i++){
+          if (i==nextIndex){
+            dotInView(nextIndex);
+          }
+          else{
+            dotOutOfView(i);
+          }
+          
+        
+        }
+        
+      }
+
+  });
+}
+  
+  $(window).on('resize scroll', function() {
+    if ($('#home-background').isInViewport()) {
+      dotInView(1);
+      dotOutOfView(2);
+      dotOutOfView(3);
+      dotOutOfView(4);
+    } 
+    else if ($('#portfolio').isInViewport()) {
+      dotInView(2);
+      dotOutOfView(1);
+      dotOutOfView(3);
+      dotOutOfView(4);
+    } 
+    else if ($('#about').isInViewport()) {
+      dotInView(3);
+      dotOutOfView(1);
+      dotOutOfView(2);
+      dotOutOfView(4);
+    } 
+    else if ($('#connect').isInViewport()) {
+      dotInView(4);
+      dotOutOfView(1);
+      dotOutOfView(2);
+      dotOutOfView(3);
+    }
+    });
+
     $('.carousel').carousel({
       interval: 4000
     });
@@ -133,6 +229,7 @@ $( document ).ready(function() {
     onPortfolioImgClick();
     onPortfolioImgHover();   
  });
+
 
 
 
