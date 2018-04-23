@@ -164,6 +164,7 @@ $( document ).ready(function() {
   if (win.width() <= 770) {
     $('#fullpage').fullpage({
       autoScrolling: false,
+      touchSensitivity: 10,
       onLeave: function(index, nextIndex, direction){
         var leavingSection = $(this);
         console.log(nextIndex);
@@ -173,6 +174,7 @@ $( document ).ready(function() {
   }
   else {$('#fullpage').fullpage({
     autoScrolling: true,
+    touchSensitivity: 10,
     onLeave: function(index, nextIndex, direction){
         var leavingSection = $(this);
         for (i=0;i<=4;i++){
