@@ -7,3 +7,5 @@ A lecture course, that involves an intensive programming lab and design studio, 
 [Flip Stitch Pillow Project](https://acdaly.github.io/pui-work/homework_5/index.html) - A website for a fictional pillow company, Flip Stitch Pillow. Website uses Javascript and jQuery to allow customers to add/delete items to their cart.
 
 [Flip Stitch Pillow Code](homework_5/index.html)  
+
+[Personal Portfolio](https://acdaly.github.io/pui-work/final_project/index.html)
