@@ -361,6 +361,11 @@ $( document ).ready(function() {
     modalFreezePageScrolling();
     fillPortfolioTemplate(featured);
     onPortfolioImgHover();
+    $("#connect-icons").on('mouseenter', '#email', function(event){
+        console.log(this);
+        $('#email p').fadeTo(500, 1.0);
+    });
+
        
  });
 
