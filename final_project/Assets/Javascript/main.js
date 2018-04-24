@@ -1,3 +1,5 @@
+// Variables for HandleBar Template: To load Portfolio project titles
+
 var featured = {
     "projects": [
         {
@@ -215,6 +217,7 @@ var woodMetal = {
 }
 
 function fillPortfolioTemplate(category){
+    //Code from Programmable User Interfaces Lab
     //get HTML template using jQuery
     var source = $("#portfolio-template").html();
     //compile the template into a function
@@ -226,7 +229,8 @@ function fillPortfolioTemplate(category){
 
 }
 
-function onPortfolioImgHover(){   
+function onPortfolioImgHover(){
+    //Displays project title when hovering on project image in portfolio
     $(".portfolio-img").on('mouseenter', 'img', function(event){
         $(this).fadeTo(200, 0);
         $(this).parent().children('h2').fadeTo(200, 1);
@@ -248,12 +252,14 @@ $.fn.isInViewport = function() {
 };
 
 function dotOutOfView(i){
+    //fills corresponding dot black in sidebar when it's not in view
   $('#dot' + i).css('background-color', 'black');
   $('#dot' + i).css('border-color', 'white');
   $('#dot' + i).css('box-shadow', '0px 0px 0px 0px #121721');
 }
 
 function dotInView(i){
+    //fills corresponding dot white in sidebar to show which section is viewed
   $('#dot' + i).css('background-color', 'white');
   $('#dot' + i).css('box-shadow', '0px 0px 0px 2px #121721');
 }
@@ -264,35 +270,31 @@ $(window).on('resize', function(){
       else {$.fn.fullpage.setAutoScrolling(true);}
 });
 
-function sideDotScrolling(nextIndex){
-  for (i=0;i<=4;i++){
-    if (i==nextIndex){
-      dotInView(nextIndex);
-    }
-    else{
-      dotOutOfView(i);
-    }
-  }
+function sideDotScrolling(index, nextIndex){
+    dotOutOfView(index);
+    dotInView(nextIndex);
 }
 
 function windowSizeOptions(){
+//when window with is narrow, disable autoscroll. Otherwise, enable autoscroll
   var win = $(this);
   if (win.width() <= 770) {
     $('#fullpage').fullpage({
       autoScrolling: false,
       touchSensitivity: 10,
-      onLeave: function(index, nextIndex, direction){sideDotScrolling(nextIndex);}
+      onLeave: function(index, nextIndex, direction){sideDotScrolling(index, nextIndex);}
     });
   }
   else {$('#fullpage').fullpage({
     autoScrolling: true,
     touchSensitivity: 10,
-    onLeave: function(index, nextIndex, direction){sideDotScrolling(nextIndex);}
+    onLeave: function(index, nextIndex, direction){sideDotScrolling(index, nextIndex);}
     });
   }
 }
 
 function navBarLoad(clickID){
+    //load the clicked category on the portfolio page
   $('#portfolio-content').stop(true).fadeTo(500, 0,
       function(){
           $('#portfolio').children('#portfolio-content').remove();
@@ -330,6 +332,7 @@ function navBarLoad(clickID){
 }
 
 function navBarConfiguration(){
+    //add click events to navBar to change active category and load content
   $('#portfolio .nav-link' ).on( 'click', function () {
     //references https://stackoverflow.com/questions/24514717/bootstrap-navbar-active-state-not-working
       $('#portfolio .navbar').find( '.active' ).removeClass( 'active' );
@@ -343,6 +346,7 @@ function navBarConfiguration(){
 }
 
 function modalFreezePageScrolling(){
+    //disable main page scrolling when modal is open
   $(".modal").on("hidden.bs.modal", function () {
       $.fn.fullpage.setAllowScrolling(true);
       $.fn.fullpage.setKeyboardScrolling(true);
@@ -362,7 +366,6 @@ $( document ).ready(function() {
     fillPortfolioTemplate(featured);
     onPortfolioImgHover();
     $("#connect-icons").on('mouseenter', '#email', function(event){
-        console.log(this);
         $('#email p').fadeTo(500, 1.0);
     });
 
