@@ -282,12 +282,14 @@ function windowSizeOptions(){
     $('#fullpage').fullpage({
       autoScrolling: false,
       touchSensitivity: 10,
+      scrollingSpeed: 800,
       onLeave: function(index, nextIndex, direction){sideDotScrolling(index, nextIndex);}
     });
   }
   else {$('#fullpage').fullpage({
     autoScrolling: true,
     touchSensitivity: 10,
+    scrollingSpeed: 800,
     onLeave: function(index, nextIndex, direction){sideDotScrolling(index, nextIndex);}
     });
   }
